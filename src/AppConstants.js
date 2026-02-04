@@ -4,6 +4,7 @@ import { intlHelper } from '@redhat-cloud-services/frontend-components-translati
 import messages from './Messages';
 import { strong } from './Utilities/intlHelper';
 import { conditionalFilterType } from '@redhat-cloud-services/frontend-components/ConditionalFilter';
+import { SearchIcon, ExclamationCircleIcon } from '@patternfly/react-icons';
 
 const cache = createIntlCache();
 const locale = navigator.language.slice(0, 2);
@@ -492,6 +493,19 @@ export const exportNotifications = {
     title: 'Couldn’t download export',
     variant: 'danger',
     autoDismiss: false,
+  },
+};
+
+export const NO_SYSTEMS_MAP = {
+  no_match: {
+    icon: SearchIcon,
+    titleText: 'No matching systems found',
+    bodyText: 'To continue, edit your filter settings and search again.',
+  },
+  error: {
+    icon: ExclamationCircleIcon,
+    titleText: 'Error encountered when fetching systems.',
+    bodyText: 'To continue, try resetting the filters and search again.',
   },
 };
 
